@@ -12,4 +12,6 @@ test_script:
   - cmd: cmake ..
   - cmd: cmake --build .
   - cmd: dir
+  - cmd: Debug
+  - cmd: dir
   - cmd: "TemporaryProject.exe"
