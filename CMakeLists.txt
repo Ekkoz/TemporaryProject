@@ -1,6 +1,13 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.6)
 project(TemporaryProject)
 
-set(CMAKE_CXX_STANDARD 11)
+add_library(TemporaryProject
+	src/Calculator.cpp)
 
-add_executable(TemporaryProject main.cpp)
+include_directories("include")
+
+option(BUILD_TESTS "compile tests executable" OFF)
+
+if(BUILD_TESTS)
+	add_subdirectory("test")
+endif(BUILD_TESTS)
