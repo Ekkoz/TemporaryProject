@@ -16,6 +16,9 @@ endif(BUILD_TESTS)
 # The whole MSVC
 #
 if(MSVC)
+	if(BUILD_TESTS)
+		set(MSVC_RUNTIME "dynamic")
+	endif()
 	# Default to statically-linked runtime.
 	if("${MSVC_RUNTIME}" STREQUAL "")
   		set(MSVC_RUNTIME "static")
