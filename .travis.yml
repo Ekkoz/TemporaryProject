@@ -14,4 +14,4 @@ script:
   - cd build
   - cmake -DBUILD_TESTS=ON ..
   - make
-  - ./TemporaryProject_Test
+  - ./test/TemporaryProject_Test
