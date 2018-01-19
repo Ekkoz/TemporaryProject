@@ -13,3 +13,15 @@ target_link_libraries(TemporaryProject_Test gtest gtest_main)
 
 # Linking the tested library.
 target_link_libraries(TemporaryProject_Test TemporaryProject)
+
+if(MSVC)
+          message(STATUS
+            "MSVC -> forcing test-building use of dynamically-linked runtime."
+          )
+          foreach(variable ${variables})
+            if(${variable} MATCHES "/MT")
+              string(REGEX REPLACE "/MT" "/MD" ${variable} "${${variable}}")
+            endif()
+          endforeach()
+endif()
+
