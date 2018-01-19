@@ -9,9 +9,9 @@ build: off
 test_script:
   - cmd: mkdir build
   - cmd: cd build
-  - cmd: cmake ..
+  - cmd: cmake -DBUILD_TESTS=ON ..
   - cmd: cmake --build .
   - cmd: dir
   - cmd: cd Debug
   - cmd: dir
-  - cmd: "TemporaryProject.exe"
+  - cmd: "TemporaryProject_Test.exe"

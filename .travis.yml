@@ -12,6 +12,6 @@ script:
   - $CXX --version
   - mkdir build
   - cd build
-  - cmake ..
+  - cmake -DBUILD_TESTS=ON ..
   - make
-  - ./TemporaryProject
+  - ./TemporaryProject_Test
